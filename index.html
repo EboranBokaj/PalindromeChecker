@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="./Assets/Palindrome_Checker_Logo.png"/>
+    <script src="./app.js" defer></script>
+</head>
+<body>
+    <div class="app-box ">
+        <div class="head">
+            <div class="title-and-logo">
+                <h1>Palindrome Checker</h1>
+                <img src="Assets/Palindrome_Checker_Logo.png" alt="logo">
+            </div>
+            <p class="description">You can enter your text and we will check it if it’s a palindrome or not.</p>
+        </div>
+        <div class="text-input">
+            <textarea name="input" id="input" cols="30" rows="10" placeholder="| enter text..."></textarea>
+        </div>
+        <div class="footer">
+            <button id="button" onclick="palindrome()">is it a palindrome?</button>
+            <div class="inside-footer">
+                <div class="icon hidden" id="is-palindrome">
+                    <img src="./Assets/spellcheck-24px.svg" alt="true or false value">
+                </div>
+                <div class="icon hidden" id="not-palindrome">
+                <img src="./Assets/not_interested-24px.svg" alt="true or false value">
+                </div>
+                <p class="text-feedback"></p>
+                <div class="info">
+                    <p>?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="more-info hidden-info">
+        <h2>PALINDROME</h2>
+        <p>a word, phrase, or sequence that reads the same backwards as forwards <br><br> this is a project from my freecodecamp JavaScript Algorithms and Data Structures Certification</p>
+        <div class="icon-box">
+            <a href="#"><img src="./Assets/GitHub-Mark-32px.png" alt="GitHub logo"></a>
+            <a href="#"><img src="./Assets/free-code-camp-brands.svg" alt="FreeCodeCamp logo"></a>
+            <a href="#"><img src="./Assets/language-24px.svg" alt="Website logo"></a>
+        </div>
+    </div>
+</body>
+</html>
