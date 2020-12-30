@@ -6,6 +6,7 @@ let textFeedback = document.getElementsByClassName("text-feedback")[0];
 let moreInfo = document.getElementsByClassName("more-info")[0];
 let infoButton = document.getElementsByClassName("info")[0];
 
+//Handling visibility and transition of info box
 function showMoreInfo(){
     moreInfo.style.opacity = 1;
     moreInfo.style.visibility = "visible";
@@ -19,6 +20,15 @@ infoButton.addEventListener("mouseleave", hideMoreInfo);
 moreInfo.addEventListener("mouseenter", showMoreInfo);
 moreInfo.addEventListener("mouseleave", hideMoreInfo);
 
+//It resets collor of the ap on click wherever in app if there is no input text
+function appReset(){
+    let strVal = input.value;
+    if(strVal.length === 0) {
+        app.classList.remove("true");
+        app.classList.remove("false");
+    }
+}
+input.addEventListener('click', appReset);
 
 function palindrome() {
     app.classList.remove("true");
@@ -28,12 +38,6 @@ function palindrome() {
     textFeedback.innerHTML = " "
     let str = "";
     str = input.value;
-    //console.log("runing palindrome");
-    //console.log(str);
-    if(str.length === 0) {
-        app.classList.remove("true");
-        app.classList.remove("false");
-    }
     if(str.length > 0){
         let regex = /[a-zA-Z0-9]/g;
         let arr01 = str.toLowerCase().match(regex);
@@ -42,18 +46,16 @@ function palindrome() {
         for(let i = 0; i < arr01.length; i++){
             if(arr01[i] === arr02[i]){
                 if(i + 1 === arr01.length){
-                    //console.log("true");
                     app.classList.add("true");
                     trueImage.classList.remove("hidden");
                     textFeedback.innerHTML = "a true palindrome"
-                    return
+                    return true
                 }
             } else {
-                //console.log("false");
                 app.classList.add("false");
                 falseImage.classList.remove("hidden");
                 textFeedback.innerHTML = "not a palindrome"
-                return
+                return false
             }
         }
     }
