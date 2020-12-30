@@ -26,6 +26,9 @@ function appReset(){
     if(strVal.length === 0) {
         app.classList.remove("true");
         app.classList.remove("false");
+        trueImage.classList.add("hidden");
+        falseImage.classList.add("hidden");
+        textFeedback.innerHTML = " "
     }
 }
 input.addEventListener('click', appReset);
